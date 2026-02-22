@@ -117,18 +117,18 @@ const Navigation = () => {
                     <span>Awards</span>
                   </a>
                 </DropdownMenuItem>
-                {/* <DropdownMenuItem asChild>
+                <DropdownMenuItem asChild>
                   <a 
-                    href="/brochures/ICSSER Sponsored National Conference Brochure (3).pdf" 
+                    href="/brochures/2.pdf" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-center space-x-2 cursor-pointer text-slate-700 hover:bg-slate-50"
                   >
                     <FileText className="h-4 w-4" />
-                    <span>Events Brochure</span>
+                    <span>International Seminar (25th - 26th Feb 2026)</span>
                   </a>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild>
+                {/* <DropdownMenuItem asChild>
                   <a 
                     href="/brochures/research.pdf" 
                     target="_blank" 
@@ -211,16 +211,16 @@ const Navigation = () => {
                   <FileText className="h-4 w-4" />
                   <span className="font-medium text-sm">Awards</span>
                 </a>
-                {/* <a
-                  href="/brochures/events.pdf"
+                <a
+                  href="/brochures/2.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-3 p-3 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 transition-all duration-200"
                   onClick={handleNavClick}
                 >
                   <FileText className="h-4 w-4" />
-                  <span className="font-medium text-sm">Awards</span>
-                </a> */}
+                  <span className="font-medium text-sm">International Seminar (25th - 26th Feb 2026)</span>
+                </a>
                 {/* <a
                   href="/brochures/research.pdf"
                   target="_blank"
