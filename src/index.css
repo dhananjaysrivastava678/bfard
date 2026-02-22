@@ -7,65 +7,65 @@
 
 @layer base {
   :root {
-    --background: 255 255 255; /* Pure White */
-    --foreground: 51 65 85; /* Slate 700 */
+    --background: 0 0% 100%; /* Pure White */
+    --foreground: 215 28% 27%; /* Slate 700 */
 
-    --card: 255 255 255; /* Pure White */
-    --card-foreground: 51 65 85; /* Slate 700 */
+    --card: 0 0% 100%; /* Pure White */
+    --card-foreground: 215 28% 27%; /* Slate 700 */
 
-    --popover: 255 255 255;
-    --popover-foreground: 51 65 85;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 28% 27%;
 
-    --primary: 30 58 138; /* Deep Blue */
-    --primary-foreground: 255 255 255;
+    --primary: 224 64% 33%; /* Deep Blue */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 248 250 252; /* Slate 50 */
-    --secondary-foreground: 51 65 85;
+    --secondary: 210 40% 98%; /* Slate 50 */
+    --secondary-foreground: 215 28% 27%;
 
-    --muted: 241 245 249; /* Slate 100 */
-    --muted-foreground: 100 116 139; /* Slate 500 */
+    --muted: 210 40% 96%; /* Slate 100 */
+    --muted-foreground: 215 16% 47%; /* Slate 500 */
 
-    --accent: 59 130 246; /* Blue 500 */
-    --accent-foreground: 255 255 255;
+    --accent: 217 91% 60%; /* Blue 500 */
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 239 68 68; /* Red 500 */
-    --destructive-foreground: 255 255 255;
+    --destructive: 0 84% 60%; /* Red 500 */
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 226 232 240; /* Slate 200 */
-    --input: 248 250 252; /* Slate 50 */
-    --ring: 30 58 138; /* Deep Blue */
+    --border: 214 32% 91%; /* Slate 200 */
+    --input: 210 40% 98%; /* Slate 50 */
+    --ring: 224 64% 33%; /* Deep Blue */
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 15 23 42; /* Slate 900 */
-    --foreground: 248 250 252; /* Slate 50 */
+    --background: 222 47% 11%; /* Slate 900 */
+    --foreground: 210 40% 98%; /* Slate 50 */
 
-    --card: 30 41 59; /* Slate 800 */
-    --card-foreground: 248 250 252;
+    --card: 217 33% 17%; /* Slate 800 */
+    --card-foreground: 210 40% 98%;
 
-    --popover: 30 41 59;
-    --popover-foreground: 248 250 252;
+    --popover: 217 33% 17%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 59 130 246; /* Blue 500 */
-    --primary-foreground: 15 23 42;
+    --primary: 217 91% 60%; /* Blue 500 */
+    --primary-foreground: 222 47% 11%;
 
-    --secondary: 30 41 59; /* Slate 800 */
-    --secondary-foreground: 248 250 252;
+    --secondary: 217 33% 17%; /* Slate 800 */
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 30 41 59;
-    --muted-foreground: 148 163 184;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 30 58 138; /* Deep Blue */
-    --accent-foreground: 248 250 252;
+    --accent: 224 64% 33%; /* Deep Blue */
+    --accent-foreground: 210 40% 98%;
 
-    --destructive: 239 68 68;
-    --destructive-foreground: 15 23 42;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 222 47% 11%;
 
-    --border: 51 65 85;
-    --input: 51 65 85;
-    --ring: 59 130 246;
+    --border: 215 28% 27%;
+    --input: 215 28% 27%;
+    --ring: 217 91% 60%;
   }
 }
 
@@ -75,7 +75,7 @@
   }
 
   body {
-    
+    @apply bg-background text-foreground;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
@@ -140,16 +140,16 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(241 245 249); /* slate-100 */
+  background: hsl(210 40% 96%); /* slate-100 */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(30 58 138); /* primary */
+  background: hsl(224 64% 33%); /* primary */
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(59 130 246); /* accent */
+  background: hsl(217 91% 60%); /* accent */
 }
 
 /* Remove loading background colors */
