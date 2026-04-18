@@ -130,7 +130,7 @@ const Navigation = () => {
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
                   <a 
-                    href="https://drive.google.com/file/d/1GuwT7cVJ2xm3QVnrNveJp9l30lYPgxbl/view?usp=sharing" 
+                    href="/brochures/Int. Seminar FDP 2026.pdf" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-center space-x-2 cursor-pointer text-slate-700 hover:bg-slate-50"
@@ -221,16 +221,16 @@ const Navigation = () => {
                   <FileText className="h-4 w-4" />
                   <span className="font-medium text-sm">International Seminar (25th - 26th Feb 2026)</span>
                 </a>
-                {/* <a
-                  href="/brochures/research.pdf"
+                <a
+                  href="public/brochures/Int. Seminar FDP 2026.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center space-x-3 p-3 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 transition-all duration-200"
                   onClick={handleNavClick}
                 >
                   <FileText className="h-4 w-4" />
-                  <span className="font-medium text-sm">Research Brochure</span>
-                </a> */}
+                  <span className="font-medium text-sm">Int. FOP 2026</span>
+                </a>
               </div>
 
               {/* Mobile Register Link */}

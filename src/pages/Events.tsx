@@ -26,7 +26,7 @@ const galleryImages = [
   // { id: 12, src: "/gallery/bs-img.jpeg", title: "Closing Ceremony – Annual Meet", category: "Conference" },
 ];
 
-const categories = ["All", "Seminar", "Workshop", "Webinar"];
+const categories = ["All", "Seminar", "Int. Seminar", "Webinar"];
 
 const Events = () => {
   const [activeCategory, setActiveCategory] = useState("All");

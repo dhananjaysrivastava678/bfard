@@ -12,6 +12,7 @@ import Events from "./pages/Events";
 import Contact from "./pages/Contact";
 import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
+import NotFound2 from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
