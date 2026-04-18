@@ -128,17 +128,17 @@ const Navigation = () => {
                     <span>International Seminar (25th - 26th Feb 2026)</span>
                   </a>
                 </DropdownMenuItem>
-                {/* <DropdownMenuItem asChild>
+                <DropdownMenuItem asChild>
                   <a 
-                    href="/brochures/research.pdf" 
+                    href="https://drive.google.com/file/d/1GuwT7cVJ2xm3QVnrNveJp9l30lYPgxbl/view?usp=sharing" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-center space-x-2 cursor-pointer text-slate-700 hover:bg-slate-50"
                   >
                     <FileText className="h-4 w-4" />
-                    <span>Research Brochure</span>
+                    <span>Int. FDP 2026</span>
                   </a>
-                </DropdownMenuItem> */}
+                </DropdownMenuItem> 
               </DropdownMenuContent>
             </DropdownMenu>
 
