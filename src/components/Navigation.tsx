@@ -1,7 +1,6 @@
-
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, BookOpen, Users, Globe, Calendar, Phone, FileText, UserPlus, ChevronDown, Target } from 'lucide-react';
+import { Menu, X, BookOpen, Users, Globe, Calendar, Phone, FileText, UserPlus, ChevronDown, Target, Info, Newspaper } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -13,6 +12,7 @@ import {
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [journalOpen, setJournalOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -23,7 +23,6 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Scroll to top when location changes
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
@@ -31,14 +30,27 @@ const Navigation = () => {
   const navItems = [
     { name: 'Home', path: '/', icon: BookOpen },
     { name: 'About', path: '/about', icon: Users },
-    { name: 'Mission', path: '/mission', icon: Globe },
     { name: 'Scope', path: '/scope', icon: Target },
     { name: 'Events', path: '/events', icon: Calendar },
     { name: 'Contact', path: '/contact', icon: Phone },
   ];
 
+  const journalItems = [
+    { name: 'ABOUT THE JOURNAL', path: '/journal/about', icon: Info },
+    { name: 'MISSION', path: '/mission', icon: Globe },
+    { name: 'AIM & SCOPE', path: '/journal/aim-scope', icon: Target },
+    { name: 'EDITORIAL BOARD', path: '/journal/editorial-board', icon: Users },
+    { name: 'ARCHIVES', path: '/journal/archives', icon: BookOpen },
+    { name: 'AUTHOR GUIDELINES', path: '/journal/author-guidelines', icon: FileText },
+    { name: 'PUBLICATION ETHICS', path: '/journal/publication-ethics', icon: Globe },
+    { name: 'PUBLISHER DETAILS', path: '/journal/publisher-details', icon: Newspaper },
+  ];
+
+  const isJournalActive = location.pathname.startsWith('/journal') || location.pathname === '/mission';
+
   const handleNavClick = () => {
     setIsOpen(false);
+    setJournalOpen(false);
     window.scrollTo(0, 0);
   };
 
@@ -48,11 +60,11 @@ const Navigation = () => {
     }`}>
       <div className="container-custom">
         <div className="flex items-center justify-between h-20 lg:h-24">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group" onClick={handleNavClick}>
-            <img 
-              src="/bs-logo.png" 
-              alt="BFARD Logo" 
+
+          <Link to="/" className="flex items-center space-x-3 group flex-shrink-0" onClick={handleNavClick}>
+            <img
+              src="/bs-logo.png"
+              alt="BFARD Logo"
               className="w-16 h-16 lg:w-20 lg:h-20 object-contain group-hover:scale-105 transition-transform"
             />
             <div className="block">
@@ -61,9 +73,9 @@ const Navigation = () => {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-2">
-            {navItems.map((item) => {
+
+            {navItems.slice(0, 2).map((item) => {
               const Icon = item.icon;
               const isActive = location.pathname === item.path;
               return (
@@ -85,10 +97,73 @@ const Navigation = () => {
               );
             })}
 
-            {/* Brochure Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="flex items-center space-x-2 px-4 py-3 text-slate-700 hover:bg-blue-50 hover:text-blue-700">
+                <Button
+                  variant="ghost"
+                  className={`flex items-center space-x-2 px-4 py-3 rounded-lg transition-all duration-200 h-auto ${
+                    isJournalActive
+                      ? 'bg-blue-600 text-white hover:bg-blue-700 hover:text-white'
+                      : 'text-slate-700 hover:bg-blue-50 hover:text-blue-700'
+                  }`}
+                >
+                  <Newspaper className={`h-4 w-4 ${isJournalActive ? 'text-white' : 'text-slate-500'}`} />
+                  <span className="font-medium text-sm">Journal</span>
+                  <ChevronDown className="h-3 w-3" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-56 bg-white border-slate-200 shadow-lg z-50">
+                {journalItems.map((item) => {
+                  const Icon = item.icon;
+                  const isActive = location.pathname === item.path;
+                  return (
+                    <DropdownMenuItem key={item.name} asChild>
+                      <Link
+                        to={item.path}
+                        onClick={handleNavClick}
+                        className={`flex items-center space-x-3 cursor-pointer px-3 py-2.5 transition-colors ${
+                          isActive
+                            ? 'bg-blue-50 text-blue-700 font-semibold'
+                            : 'text-slate-700 hover:bg-blue-50 hover:text-blue-700'
+                        }`}
+                      >
+                        <Icon className="h-4 w-4 flex-shrink-0" />
+                        <span className="text-sm font-medium">{item.name}</span>
+                      </Link>
+                    </DropdownMenuItem>
+                  );
+                })}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {navItems.slice(2).map((item) => {
+              const Icon = item.icon;
+              const isActive = location.pathname === item.path;
+              return (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  onClick={handleNavClick}
+                  className={`flex items-center space-x-2 px-4 py-3 rounded-lg transition-all duration-200 group ${
+                    isActive
+                      ? 'bg-blue-600 text-white shadow-sm'
+                      : 'text-slate-700 hover:bg-blue-50 hover:text-blue-700'
+                  }`}
+                >
+                  <Icon className={`h-4 w-4 transition-transform group-hover:scale-110 ${
+                    isActive ? 'text-white' : 'text-slate-500 group-hover:text-blue-700'
+                  }`} />
+                  <span className="font-medium text-sm">{item.name}</span>
+                </Link>
+              );
+            })}
+
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  className="flex items-center space-x-2 px-4 py-3 text-slate-700 hover:bg-blue-50 hover:text-blue-700 h-auto"
+                >
                   <FileText className="h-4 w-4 text-slate-500" />
                   <span className="font-medium text-sm">Brochure</span>
                   <ChevronDown className="h-3 w-3" />
@@ -96,53 +171,36 @@ const Navigation = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-56 bg-white border-slate-200 shadow-lg z-50">
                 <DropdownMenuItem asChild>
-                  <a 
-                    href="https://drive.google.com/file/d/1j-NNzKk789CZVoivHHER2nq-WbYZ8LAU/view?usp=drive_link" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 cursor-pointer text-slate-700 hover:bg-slate-50"
-                  >
+                  <a href="https://drive.google.com/file/d/1j-NNzKk789CZVoivHHER2nq-WbYZ8LAU/view?usp=drive_link" target="_blank" rel="noopener noreferrer"
+                    className="flex items-center space-x-2 cursor-pointer text-slate-700 hover:bg-slate-50">
                     <FileText className="h-4 w-4" />
-                    <span>ICSSER Sponsored National Conference Brochure </span>
+                    <span>ICSSER Sponsored National Conference Brochure</span>
                   </a>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <a 
-                    href="/brochures/Award pdf.pdf" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 cursor-pointer text-slate-700 hover:bg-slate-50"
-                  >
+                  <a href="/brochures/Award pdf.pdf" target="_blank" rel="noopener noreferrer"
+                    className="flex items-center space-x-2 cursor-pointer text-slate-700 hover:bg-slate-50">
                     <FileText className="h-4 w-4" />
                     <span>Awards</span>
                   </a>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <a 
-                    href="/brochures/2.pdf" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 cursor-pointer text-slate-700 hover:bg-slate-50"
-                  >
+                  <a href="/brochures/2.pdf" target="_blank" rel="noopener noreferrer"
+                    className="flex items-center space-x-2 cursor-pointer text-slate-700 hover:bg-slate-50">
                     <FileText className="h-4 w-4" />
                     <span>International Seminar (25th - 26th Feb 2026)</span>
                   </a>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <a 
-                    href="/brochures/Int. Seminar FDP 2026.pdf" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 cursor-pointer text-slate-700 hover:bg-slate-50"
-                  >
+                  <a href="/brochures/Int. Seminar FDP 2026.pdf" target="_blank" rel="noopener noreferrer"
+                    className="flex items-center space-x-2 cursor-pointer text-slate-700 hover:bg-slate-50">
                     <FileText className="h-4 w-4" />
                     <span>Int. FDP 2026</span>
                   </a>
-                </DropdownMenuItem> 
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
 
-            {/* Register Button */}
             <Button asChild className="bg-blue-600 hover:bg-blue-700 text-white shadow-sm transition-all duration-200 px-6 py-3 rounded-lg ml-2">
               <Link to="/register" className="flex items-center space-x-2" onClick={handleNavClick}>
                 <UserPlus className="h-4 w-4" />
@@ -151,7 +209,6 @@ const Navigation = () => {
             </Button>
           </div>
 
-          {/* Mobile menu button */}
           <Button
             variant="ghost"
             size="sm"
@@ -163,12 +220,12 @@ const Navigation = () => {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       {isOpen && (
         <div className="lg:hidden bg-white border-t border-slate-200">
           <div className="container-custom py-4">
             <div className="space-y-2">
-              {navItems.map((item) => {
+
+              {navItems.slice(0, 2).map((item) => {
                 const Icon = item.icon;
                 const isActive = location.pathname === item.path;
                 return (
@@ -177,9 +234,7 @@ const Navigation = () => {
                     to={item.path}
                     onClick={handleNavClick}
                     className={`flex items-center space-x-3 p-3 rounded-lg transition-all duration-200 ${
-                      isActive
-                        ? 'bg-blue-600 text-white'
-                        : 'text-slate-700 hover:bg-blue-50 hover:text-blue-700'
+                      isActive ? 'bg-blue-600 text-white' : 'text-slate-700 hover:bg-blue-50 hover:text-blue-700'
                     }`}
                   >
                     <Icon className="h-4 w-4" />
@@ -187,61 +242,91 @@ const Navigation = () => {
                   </Link>
                 );
               })}
-              
-              {/* Mobile Brochure Link */}
+
+              <div className="space-y-1">
+                <button
+                  onClick={() => setJournalOpen(!journalOpen)}
+                  className={`w-full flex items-center justify-between p-3 rounded-lg transition-all duration-200 ${
+                    isJournalActive ? 'bg-blue-600 text-white' : 'text-slate-700 hover:bg-blue-50 hover:text-blue-700'
+                  }`}
+                >
+                  <div className="flex items-center space-x-3">
+                    <Newspaper className="h-4 w-4" />
+                    <span className="font-medium text-sm">Journal</span>
+                  </div>
+                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${journalOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {journalOpen && (
+                  <div className="pl-4 space-y-1">
+                    {journalItems.map((item) => {
+                      const Icon = item.icon;
+                      const isActive = location.pathname === item.path;
+                      return (
+                        <Link
+                          key={item.name}
+                          to={item.path}
+                          onClick={handleNavClick}
+                          className={`flex items-center space-x-3 p-3 rounded-lg transition-all duration-200 ${
+                            isActive ? 'bg-blue-100 text-blue-700 font-semibold' : 'text-slate-600 hover:bg-blue-50 hover:text-blue-700'
+                          }`}
+                        >
+                          <Icon className="h-4 w-4 flex-shrink-0" />
+                          <span className="font-medium text-xs">{item.name}</span>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+
+              {navItems.slice(2).map((item) => {
+                const Icon = item.icon;
+                const isActive = location.pathname === item.path;
+                return (
+                  <Link
+                    key={item.name}
+                    to={item.path}
+                    onClick={handleNavClick}
+                    className={`flex items-center space-x-3 p-3 rounded-lg transition-all duration-200 ${
+                      isActive ? 'bg-blue-600 text-white' : 'text-slate-700 hover:bg-blue-50 hover:text-blue-700'
+                    }`}
+                  >
+                    <Icon className="h-4 w-4" />
+                    <span className="font-medium text-sm">{item.name}</span>
+                  </Link>
+                );
+              })}
+
               <div className="space-y-1">
                 <p className="text-xs text-slate-500 px-3 py-1 font-medium">Brochures</p>
-                <a
-                  href="https://drive.google.com/file/d/1j-NNzKk789CZVoivHHER2nq-WbYZ8LAU/view?usp=drive_link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-3 p-3 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 transition-all duration-200"
-                  onClick={handleNavClick}
-                >
+                <a href="https://drive.google.com/file/d/1j-NNzKk789CZVoivHHER2nq-WbYZ8LAU/view?usp=drive_link" target="_blank" rel="noopener noreferrer" onClick={handleNavClick}
+                  className="flex items-center space-x-3 p-3 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 transition-all duration-200">
                   <FileText className="h-4 w-4" />
                   <span className="font-medium text-sm">ICSSER Sponsored National Conference Brochure</span>
                 </a>
-                <a
-                  href="/brochures/Award pdf.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-3 p-3 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 transition-all duration-200"
-                  onClick={handleNavClick}
-                >
+                <a href="/brochures/Award pdf.pdf" target="_blank" rel="noopener noreferrer" onClick={handleNavClick}
+                  className="flex items-center space-x-3 p-3 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 transition-all duration-200">
                   <FileText className="h-4 w-4" />
                   <span className="font-medium text-sm">Awards</span>
                 </a>
-                <a
-                  href="/brochures/2.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-3 p-3 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 transition-all duration-200"
-                  onClick={handleNavClick}
-                >
+                <a href="/brochures/2.pdf" target="_blank" rel="noopener noreferrer" onClick={handleNavClick}
+                  className="flex items-center space-x-3 p-3 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 transition-all duration-200">
                   <FileText className="h-4 w-4" />
                   <span className="font-medium text-sm">International Seminar (25th - 26th Feb 2026)</span>
                 </a>
-                <a
-                  href="public/brochures/Int. Seminar FDP 2026.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-3 p-3 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 transition-all duration-200"
-                  onClick={handleNavClick}
-                >
+                <a href="/brochures/Int. Seminar FDP 2026.pdf" target="_blank" rel="noopener noreferrer" onClick={handleNavClick}
+                  className="flex items-center space-x-3 p-3 rounded-lg text-slate-700 hover:bg-blue-50 hover:text-blue-700 transition-all duration-200">
                   <FileText className="h-4 w-4" />
-                  <span className="font-medium text-sm">Int. FOP 2026</span>
+                  <span className="font-medium text-sm">Int. FDP 2026</span>
                 </a>
               </div>
 
-              {/* Mobile Register Link */}
-              <Link
-                to="/register"
-                onClick={handleNavClick}
-                className="flex items-center space-x-3 p-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-all duration-200"
-              >
+              <Link to="/register" onClick={handleNavClick}
+                className="flex items-center space-x-3 p-3 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-all duration-200">
                 <UserPlus className="h-4 w-4" />
                 <span className="font-medium text-sm">Register</span>
               </Link>
+
             </div>
           </div>
         </div>

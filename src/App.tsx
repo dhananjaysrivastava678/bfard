@@ -12,7 +12,13 @@ import Events from "./pages/Events";
 import Contact from "./pages/Contact";
 import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
-import NotFound2 from "./pages/NotFound";
+import AboutJournal from "./pages/journal/AboutJournal";
+import AimScope from "./pages/journal/AimScope";
+import EditorialBoard from "./pages/journal/EditorialBoard";
+import Archives from "./pages/journal/Archives";
+import AuthorGuidelines from "./pages/journal/AuthorGuidelines";
+import PublicationEthics from "./pages/journal/PublicationEthics";
+import PublisherDetails from "./pages/journal/PublisherDetails";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +36,14 @@ const App = () => (
           <Route path="/events" element={<Events />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/register" element={<Register />} />
+          {/* Journal Routes */}
+          <Route path="/journal/about" element={<AboutJournal />} />
+          <Route path="/journal/aim-scope" element={<AimScope />} />
+          <Route path="/journal/editorial-board" element={<EditorialBoard />} />
+          <Route path="/journal/archives" element={<Archives />} />
+          <Route path="/journal/author-guidelines" element={<AuthorGuidelines />} />
+          <Route path="/journal/publication-ethics" element={<PublicationEthics />} />
+          <Route path="/journal/publisher-details" element={<PublisherDetails />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
