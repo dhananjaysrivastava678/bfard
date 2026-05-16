@@ -368,7 +368,7 @@ const articles = [
     number: 'BIJSS-2026-01',
     topic:
       'From Devotion to Monstrosity:  Grotesque Masculinity and the  Transformation of Ranvijay in  Animal  by Sandeep Reddy Vanga ',
-    author: 'Dr. Biswajeet Saha',
+    author: 'Dr. Bomter Dirchi',
     pageRange: 'pp. 42-49',
     // category: 'Dr. Bomter Dirchi',
     pdfLink:

@@ -106,8 +106,8 @@ const Footer = () => {
               <div className="flex items-start space-x-2">
                 <Mail className="h-4 w-4 text-slate-500 mt-0.5 flex-shrink-0" />
                 <div className="text-sm">
-                  <p className="text-slate-600">info@bfard.org</p>
-                  <p className="text-slate-600">research@bfard.org</p>
+                  <p className="text-slate-600">bhagyashreefoundationfor@gmail.com</p>
+                  {/* <p className="text-slate-600">info@bhargavafoundation.in</p> */}
                 </div>
               </div>
               <div className="flex items-start space-x-2">
@@ -119,13 +119,15 @@ const Footer = () => {
               <div className="flex items-start space-x-2">
                 <MapPin className="h-4 w-4 text-slate-500 mt-0.5 flex-shrink-0" />
                 <p className="text-slate-600 text-sm">
-                  BHAGYASHREE Foundation for Academic Research and Development <br />
-                  Dhanbad, Jharkhand, 826001
+                  Sri Krishna Puri, Gol Building Road, Taneja House,
+                  Manaitand, Dhanbad, Jharkhand, India
+                  Pin: 826001
+
                 </p>
               </div>
               <div className="flex items-start space-x-2">
                 <Globe className="h-4 w-4 text-slate-500 mt-0.5 flex-shrink-0" />
-                <p className="text-slate-600 text-sm">www.bfard.org</p>
+                <p className="text-slate-600 text-sm">https://bhagyashreefoundation.in/</p>
               </div>
             </div>
           </div>

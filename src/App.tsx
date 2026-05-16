@@ -19,6 +19,7 @@ import Archives from "./pages/journal/Archives";
 import AuthorGuidelines from "./pages/journal/AuthorGuidelines";
 import PublicationEthics from "./pages/journal/PublicationEthics";
 import PublisherDetails from "./pages/journal/PublisherDetails";
+import JournalInfo from "./pages/journal/JournalInfo";
 
 const queryClient = new QueryClient();
 
@@ -44,6 +45,7 @@ const App = () => (
           <Route path="/journal/author-guidelines" element={<AuthorGuidelines />} />
           <Route path="/journal/publication-ethics" element={<PublicationEthics />} />
           <Route path="/journal/publisher-details" element={<PublisherDetails />} />
+          <Route path="/journal/journal-info" element={<JournalInfo />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

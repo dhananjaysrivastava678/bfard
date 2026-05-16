@@ -28,6 +28,12 @@ const EditorialBoard = () => {
       institution: 'Nepal Commerce Campus, Minbhawan, Kathmandu',
       email: 'surendra.mahato@ncc.tu.edu.np',
     },
+        {
+      name: 'Dr. Sunita Rani',
+      role: 'Assistant Professor,Dept. of PSYCHOLOGY',
+      institution: 'Gurukula Kangri (deemed to be university) Haridwar',
+      email: 'Sunita.rani@gkv.ac.in',
+    },
   ];
 
   return (

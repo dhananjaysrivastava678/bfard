@@ -37,8 +37,10 @@ const Contact = () => {
                       <div>
                         <h3 className="font-semibold text-slate-800 mb-1">Address</h3>
                         <p className="text-slate-600">
-                          Dhanbad, Jharkhand, 826001<br />
-                          India
+                          Sri Krishna Puri, Gol Building Road, <br />
+                          Taneja House, Manaitand, Dhanbad, <br />
+                          Jharkhand, India Pin: 826001
+
                         </p>
                       </div>
                     </div>
@@ -65,7 +67,7 @@ const Contact = () => {
                         <h3 className="font-semibold text-slate-800 mb-1">Email</h3>
                         <p className="text-slate-600">
                           <a href="mailto:info@bfard.org" className="hover:text-blue-600 transition-colors">
-                            info@bfard.org
+                             bhagyashreefoundationfor@gmail.com
                           </a>
                         </p>
                       </div>

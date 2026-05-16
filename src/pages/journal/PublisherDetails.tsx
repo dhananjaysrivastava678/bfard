@@ -1,6 +1,6 @@
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import { Building, Mail, MapPin, Globe } from 'lucide-react';
+import { Building, Mail, MapPin, Globe, Phone } from 'lucide-react';
 
 const PublisherDetails = () => {
   return (
@@ -67,6 +67,21 @@ const PublisherDetails = () => {
                     className="text-blue-600 hover:text-blue-800 transition-colors font-medium"
                   >
                     info@bhagyashreefoundation.in
+                  </a>
+                </div>
+              </div>
+              
+              <div className="flex items-start space-x-4 p-6">
+                <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Phone className="h-5 w-5 text-blue-600" />
+                </div>
+                <div>
+                  <p className="font-semibold text-slate-800 mb-1">Contact No.</p>
+                  <a
+                    href="tel:+919065309022"
+                    className="text-blue-600 hover:text-blue-800 transition-colors font-medium"
+                  >
+                    +91-9065309022
                   </a>
                 </div>
               </div>

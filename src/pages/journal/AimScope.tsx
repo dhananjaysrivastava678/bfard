@@ -77,7 +77,7 @@ const AimScope = () => {
         </div>
       </div>
       <Footer />
-    </div>
+    </div>            
   );
 };
 
