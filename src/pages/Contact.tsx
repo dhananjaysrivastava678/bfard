@@ -37,10 +37,7 @@ const Contact = () => {
                       <div>
                         <h3 className="font-semibold text-slate-800 mb-1">Address</h3>
                         <p className="text-slate-600">
-                          Sri Krishna Puri, Gol Building Road, <br />
-                          Taneja House, Manaitand, Dhanbad, <br />
-                          Jharkhand, India Pin: 826001
-
+                          Manitand Dhanbad, Jharkhand, 826001
                         </p>
                       </div>
                     </div>

@@ -119,10 +119,7 @@ const Footer = () => {
               <div className="flex items-start space-x-2">
                 <MapPin className="h-4 w-4 text-slate-500 mt-0.5 flex-shrink-0" />
                 <p className="text-slate-600 text-sm">
-                  Sri Krishna Puri, Gol Building Road, Taneja House,
-                  Manaitand, Dhanbad, Jharkhand, India
-                  Pin: 826001
-
+                  Manitand Dhanbad, Jharkhand, 826001
                 </p>
               </div>
               <div className="flex items-start space-x-2">

@@ -37,14 +37,14 @@ const Navigation = () => {
 
   const journalItems = [
     { name: 'ABOUT THE JOURNAL', path: '/journal/about', icon: Info },
+    { name: 'JOURNAL INFO', path: '/journal/journal-info', icon: Info },
+    { name: 'ARCHIVES', path: '/journal/archives', icon: BookOpen },
     { name: 'MISSION', path: '/mission', icon: Globe },
     { name: 'AIM & SCOPE', path: '/journal/aim-scope', icon: Target },
     { name: 'EDITORIAL BOARD', path: '/journal/editorial-board', icon: Users },
-    { name: 'ARCHIVES', path: '/journal/archives', icon: BookOpen },
     { name: 'AUTHOR GUIDELINES', path: '/journal/author-guidelines', icon: FileText },
     { name: 'PUBLICATION ETHICS', path: '/journal/publication-ethics', icon: Globe },
     { name: 'PUBLISHER DETAILS', path: '/journal/publisher-details', icon: Newspaper },
-    { name: 'JOURNAL INFO', path: '/journal/journal-info', icon: Info },
   ];
 
   const isJournalActive = location.pathname.startsWith('/journal') || location.pathname === '/mission';

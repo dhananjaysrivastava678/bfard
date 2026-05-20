@@ -6,32 +6,32 @@ const EditorialBoard = () => {
   const boardMembers = [
     {
       name: 'Dr. Megha Pant',
-      role:'Assistant Professor',
-      institution: 'Uttarakhand Open University, Haldwani, Uttarakhand',
+      role:'Assistant Professor, Dept. of English and Foreign Languages',
+      institution: 'Uttarakhand Open University, Haldwani, Uttarakhand-263139',
       email: 'meghapant@uou.ac.in',
     },
     {
-      name: 'Ms. Anupam Sinha',
-      role: 'Assistant Professor, Amity Law School',
-      institution: 'Amity University, Patna',
-      email: 'asinha@ptn.amity.edu',
+      name: 'Ms. Paromita Das',
+      role: 'Assistant Professor & Former Head, Dept. of Education',
+      institution: 'University Of North Bengal NBU-734013',
+      email: 'paromitadas@nbu.ac.in',
     },
     {
       name: 'Dr. Lyson Chaka',
       role: 'Lecturer, Faculty of Natural and Agricultural Sciences, Department of Statistics Hatfield Campus',
-      institution: 'University of Pretoria, Pretoria 0028',
+      institution: 'University of Pretoria, Pretoria-0028',
       email: 'lyson.chaka@up.ac.za',
     },
     {
       name: 'Dr. Surendra Mahto',
-      role: 'Assistant Professor',
-      institution: 'Nepal Commerce Campus, Minbhawan, Kathmandu',
+      role: 'Assistant Professor, Dept. Of Education',
+      institution: 'Shri Lal Bahadur Shastri National Sanskrit University',
       email: 'surendra.mahato@ncc.tu.edu.np',
     },
         {
       name: 'Dr. Sunita Rani',
-      role: 'Assistant Professor,Dept. of PSYCHOLOGY',
-      institution: 'Gurukula Kangri (deemed to be university) Haridwar',
+      role: 'Assistant Professor, Dept. of Psychology',
+      institution: 'Gurukula Kangri (deemed to be university) Haridwar-249408',
       email: 'Sunita.rani@gkv.ac.in',
     },
   ];

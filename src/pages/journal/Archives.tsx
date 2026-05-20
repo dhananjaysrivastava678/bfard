@@ -327,7 +327,7 @@ const articles = [
     pageRange: 'pp. 01-14',
     // category: 'Philosophy & Humanities',
     pdfLink:
-      'https://drive.google.com/file/d/1bdhVGLu9rooAum26Twfo2NbEJTOCi-cz/view?usp=sharing',
+      '/articles/BIJSS-2026-01.pdf',
   },
   //second
   {
@@ -338,7 +338,7 @@ const articles = [
     pageRange: 'pp. 15–23',
     // category: 'Environmental Studies',
     pdfLink:
-      'https://drive.google.com/file/d/1E4jGE7-xwLTCB6GKv9QdcbsQkkITjZd7/view?usp=sharing',
+      '/articles/BIJSS-2026-02.pdf',
   },
   //third
   {
@@ -349,7 +349,7 @@ const articles = [
     pageRange: 'pp. 24–31',
     // category: 'Media & Communication',
     pdfLink:
-    'https://drive.google.com/file/d/1MjzUyAZFfH29_KgBoHUTGVSGmtQrkypy/view?usp=sharing',
+    '/articles/BIJSS-2026-03.pdf',
   },
   //fourth
   {
@@ -361,7 +361,7 @@ const articles = [
     pageRange: 'pp. 32-41',
     // category: 'Education & Technology',
     pdfLink:
-      'https://drive.google.com/file/d/1pgorw9rB_KAd7L38eOqrgyFrFAqekL8E/view?usp=sharing',
+      '/articles/BIJSS-2026-04.pdf',
   },
     {
     id: 5,
@@ -372,7 +372,7 @@ const articles = [
     pageRange: 'pp. 42-49',
     // category: 'Dr. Bomter Dirchi',
     pdfLink:
-      'https://drive.google.com/file/d/1WhfFiiUmgKxGzUaQHaeEGXCLnWNLGAXw/view?usp=sharing',
+      '/articles/BIJSS-2026-05.pdf',
   },
 ];
 

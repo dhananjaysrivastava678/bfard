@@ -51,7 +51,7 @@ const journalDetails = [
   {
     icon: Languages,
     label: 'Languages',
-    value: 'English, Hindi',
+    value: 'Multiple languages: English, Hindi,Sanskrit, Bengali, Urdu, etc. ',
     wide: false,
     accent: false,
   },
@@ -111,7 +111,7 @@ const contactDetails = [
     icon: MapPin,
     label: 'Address',
     value:
-      'Sri Krishna Puri, Gol Building Road, Taneja House, Manaitand, Dhanbad, Jharkhand, India — Pin: 826001',
+      'Manitand Dhanbad, Jharkhand, 826001',
     href: null,
     wide: true,
   },
