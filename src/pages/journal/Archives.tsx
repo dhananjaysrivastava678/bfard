@@ -505,7 +505,7 @@ const Archives = () => {
                 Published Articles
               </h2>
               <p className="text-slate-400 text-sm mt-1">
-                4 articles &nbsp;·&nbsp; Volume 1, Issue 1 (2025)
+                5 articles &nbsp;·&nbsp; Volume 1, Issue 1 (2025)
               </p>
             </div>
           </div>
