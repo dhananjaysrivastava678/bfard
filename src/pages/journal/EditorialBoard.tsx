@@ -23,10 +23,10 @@ const EditorialBoard = () => {
       email: 'lyson.chaka@up.ac.za',
     },
     {
-      name: 'Dr. Surendra Mahto',
-      role: 'Assistant Professor, Dept. Of Education',
-      institution: 'Shri Lal Bahadur Shastri National Sanskrit University',
-      email: 'surendra.mahato@ncc.tu.edu.np',
+      name: 'Dr. Sirikarn Thongmak',
+      role: ' Faculty of Multidisciplinary Sciences & Entrepreneurship Department of English',
+      institution: 'Thaksin Univerisity Thailand: 93210',
+      email: 'sirikarn.t@tsu.ac.th',
     },
         {
       name: 'Dr. Sunita Rani',

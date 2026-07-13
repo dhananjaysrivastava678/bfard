@@ -109,7 +109,7 @@ const Navigation = () => {
                   }`}
                 >
                   <Newspaper className={`h-4 w-4 ${isJournalActive ? 'text-white' : 'text-slate-500'}`} />
-                  <span className="font-medium text-sm">Journal</span>
+                  <span className="font-medium text-sm">BIJSS</span>
                   <ChevronDown className="h-3 w-3" />
                 </Button>
               </DropdownMenuTrigger>
