@@ -20,6 +20,13 @@ import AuthorGuidelines from "./pages/journal/AuthorGuidelines";
 import PublicationEthics from "./pages/journal/PublicationEthics";
 import PublisherDetails from "./pages/journal/PublisherDetails";
 import JournalInfo from "./pages/journal/JournalInfo";
+import BgjcssrAbout from "./pages/bgjcssr/AboutJournal";
+import BgjcssrJournalInfo from "./pages/bgjcssr/JournalInfo";
+import BgjcssrArchives from "./pages/bgjcssr/Archives";
+import BgjcssrMission from "./pages/bgjcssr/MissionObjectives";
+import BgjcssrAimScope from "./pages/bgjcssr/AimScope";
+import BgjcssrEditorialBoard from "./pages/bgjcssr/EditorialBoard";
+import BgjcssrContact from "./pages/bgjcssr/JournalContact";
 
 const queryClient = new QueryClient();
 
@@ -47,6 +54,14 @@ const App = () => (
           <Route path="/journal/publisher-details" element={<PublisherDetails />} />
           <Route path="/journal/journal-info" element={<JournalInfo />} />
           <Route path="*" element={<NotFound />} />
+          {/* BGJCSSR Routes */}
+          <Route path="/bgjcssr/about"          element={<BgjcssrAbout />} />
+          <Route path="/bgjcssr/journal-info"   element={<BgjcssrJournalInfo />} />
+          <Route path="/bgjcssr/archives"       element={<BgjcssrArchives />} />
+          <Route path="/bgjcssr/mission"        element={<BgjcssrMission />} />
+          <Route path="/bgjcssr/aim-scope"      element={<BgjcssrAimScope />} />
+          <Route path="/bgjcssr/editorial-board" element={<BgjcssrEditorialBoard />} />
+          <Route path="/bgjcssr/contact"        element={<BgjcssrContact />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

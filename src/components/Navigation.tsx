@@ -13,6 +13,7 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [journalOpen, setJournalOpen] = useState(false);
+  const [bgjcssrOpen, setBgjcssrOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -30,7 +31,6 @@ const Navigation = () => {
   const navItems = [
     { name: 'Home', path: '/', icon: BookOpen },
     { name: 'About', path: '/about', icon: Users },
-    { name: 'Scope', path: '/scope', icon: Target },
     { name: 'Events', path: '/events', icon: Calendar },
     { name: 'Contact', path: '/contact', icon: Phone },
   ];
@@ -45,13 +45,26 @@ const Navigation = () => {
     { name: 'AUTHOR GUIDELINES', path: '/journal/author-guidelines', icon: FileText },
     { name: 'PUBLICATION ETHICS', path: '/journal/publication-ethics', icon: Globe },
     { name: 'PUBLISHER DETAILS', path: '/journal/publisher-details', icon: Newspaper },
+    { name: 'SCOPE', path: '/scope', icon: Target },
   ];
+  const bgjcssrItems = [
+    { name: 'ABOUT THE JOURNAL', path: '/bgjcssr/about', icon: Info },
+    { name: 'EDITORIAL BOARD', path: '/bgjcssr/editorial-board', icon: Users },
+    { name: 'JOURNAL INFO', path: '/bgjcssr/journal-info', icon: Info },
+    { name: 'ARCHIVES', path: '/bgjcssr/archives', icon: BookOpen },
+    { name: 'MISSION & OBJECTIVES', path: '/bgjcssr/mission', icon: Globe },
+    { name: 'AIM & SCOPE', path: '/bgjcssr/aim-scope', icon: Target },
+    { name: 'CONTACT US', path: '/bgjcssr/contact', icon: Phone },
+  ];
+
+const isBgjcssrActive = location.pathname.startsWith('/bgjcssr');
 
   const isJournalActive = location.pathname.startsWith('/journal') || location.pathname === '/mission';
 
   const handleNavClick = () => {
     setIsOpen(false);
     setJournalOpen(false);
+    setBgjcssrOpen(false);
     window.scrollTo(0, 0);
   };
 
@@ -115,6 +128,46 @@ const Navigation = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent align="start" className="w-56 bg-white border-slate-200 shadow-lg z-50">
                 {journalItems.map((item) => {
+                  const Icon = item.icon;
+                  const isActive = location.pathname === item.path;
+                  return (
+                    <DropdownMenuItem key={item.name} asChild>
+                      <Link
+                        to={item.path}
+                        onClick={handleNavClick}
+                        className={`flex items-center space-x-3 cursor-pointer px-3 py-2.5 transition-colors ${
+                          isActive
+                            ? 'bg-blue-50 text-blue-700 font-semibold'
+                            : 'text-slate-700 hover:bg-blue-50 hover:text-blue-700'
+                        }`}
+                      >
+                        <Icon className="h-4 w-4 flex-shrink-0" />
+                        <span className="text-sm font-medium">{item.name}</span>
+                      </Link>
+                    </DropdownMenuItem>
+                  );
+                })}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* ── BGJCSSR Dropdown ── */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  className={`flex items-center space-x-2 px-4 py-3 rounded-lg transition-all duration-200 h-auto ${
+                    isBgjcssrActive
+                      ? 'bg-blue-600 text-white hover:bg-blue-700 hover:text-white'
+                      : 'text-slate-700 hover:bg-blue-50 hover:text-blue-700'
+                  }`}
+                >
+                  <Newspaper className={`h-4 w-4 ${isBgjcssrActive ? 'text-white' : 'text-slate-500'}`} />
+                  <span className="font-medium text-sm">BGJCSSR</span>
+                  <ChevronDown className="h-3 w-3" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-56 bg-white border-slate-200 shadow-lg z-50">
+                {bgjcssrItems.map((item) => {
                   const Icon = item.icon;
                   const isActive = location.pathname === item.path;
                   return (
@@ -260,6 +313,43 @@ const Navigation = () => {
                 {journalOpen && (
                   <div className="pl-4 space-y-1">
                     {journalItems.map((item) => {
+                      const Icon = item.icon;
+                      const isActive = location.pathname === item.path;
+                      return (
+                        <Link
+                          key={item.name}
+                          to={item.path}
+                          onClick={handleNavClick}
+                          className={`flex items-center space-x-3 p-3 rounded-lg transition-all duration-200 ${
+                            isActive ? 'bg-blue-100 text-blue-700 font-semibold' : 'text-slate-600 hover:bg-blue-50 hover:text-blue-700'
+                          }`}
+                        >
+                          <Icon className="h-4 w-4 flex-shrink-0" />
+                          <span className="font-medium text-xs">{item.name}</span>
+                        </Link>
+                      );
+                    })}
+                  </div>
+                )}
+              </div>
+
+              {/* ── BGJCSSR mobile dropdown ── */}
+              <div className="space-y-1">
+                <button
+                  onClick={() => setBgjcssrOpen(!bgjcssrOpen)}
+                  className={`w-full flex items-center justify-between p-3 rounded-lg transition-all duration-200 ${
+                    isBgjcssrActive ? 'bg-blue-600 text-white' : 'text-slate-700 hover:bg-blue-50 hover:text-blue-700'
+                  }`}
+                >
+                  <div className="flex items-center space-x-3">
+                    <Newspaper className="h-4 w-4" />
+                    <span className="font-medium text-sm">BGJCSSR</span>
+                  </div>
+                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${bgjcssrOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {bgjcssrOpen && (
+                  <div className="pl-4 space-y-1">
+                    {bgjcssrItems.map((item) => {
                       const Icon = item.icon;
                       const isActive = location.pathname === item.path;
                       return (
