@@ -486,7 +486,7 @@ const Archives = () => {
             Volume 1 &nbsp;·&nbsp; Issue 1 &nbsp;·&nbsp; Aprail-June 2026
           </span>
           <span className="text-blue-200 text-xs md:text-sm">
-            ISSN (Online): XXXX-XXXX &nbsp;|&nbsp; Open Access
+            ISSN :  3139-714X (Online) &nbsp;|&nbsp; Open Access
           </span>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import { Users, Mail } from 'lucide-react';
+import { Users} from 'lucide-react';
 
 const EditorialBoard = () => {
   const boardMembers = [
@@ -76,13 +76,13 @@ const EditorialBoard = () => {
                     <p className="text-blue-600 text-sm font-medium mb-1">{member.role}</p>
                   )}
                   <p className="text-slate-500 text-sm mb-4">{member.institution}</p>
-                  <a
+                  {/* <a
                     href={`mailto:${member.email}`}
                     className="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors"
                   >
                     <Mail className="h-4 w-4" />
                     <span>{member.email}</span>
-                  </a>
+                  </a> */}
                 </div>
               ))}
             </div>
