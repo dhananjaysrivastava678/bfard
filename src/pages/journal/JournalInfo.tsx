@@ -37,7 +37,7 @@ const journalDetails = [
   {
     icon: Hash,
     label: 'e-ISSN',
-    value: 'Applied / Awaited',
+    value: '3139-714X (Online)',
     wide: false,
     accent: false,
   },
